@@ -14,9 +14,13 @@ public interface CourseService {
 
     Set<Course> getStudentAllCourses(String name);
 
+    Set<Course> getStudentCourses(String name, boolean end);
+
     Set<Course> getTeacherAllCourses(String name);
 
     Set<User> getCourseAllStudent(int ID);
 
     Course saveCourse(Course course);
+
+    Set<Course> getCoursesByTeacherAndEnding(User teacher, boolean end);
 }

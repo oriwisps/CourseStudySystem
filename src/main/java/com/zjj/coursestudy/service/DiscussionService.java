@@ -12,4 +12,6 @@ public interface DiscussionService {
     List<Discussion> findByReceiver(User receiver);
 
     Discussion saveDiscussion(Discussion discussion);
+
+    Discussion getDiscussionByID(int id);
 }

@@ -28,6 +28,10 @@ public class Answer {
     @JoinColumn(name = "exercise_id", nullable = false)
     private Exercise exercise;
 
+    @OneToOne
+    @JoinColumn(name = "key_word_id", nullable = false)
+    private KeyWord keyWord;
+
     public int getID() {
         return ID;
     }
@@ -66,5 +70,17 @@ public class Answer {
 
     public void setSubmit(boolean submit) {
         this.submit = submit;
+    }
+
+    public int getExerciseID(){
+        return this.exercise.getID();
+    }
+
+    public KeyWord getKeyWord() {
+        return keyWord;
+    }
+
+    public void setKeyWord(KeyWord keyWord) {
+        this.keyWord = keyWord;
     }
 }

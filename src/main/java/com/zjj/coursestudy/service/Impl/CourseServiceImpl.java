@@ -8,6 +8,7 @@ import com.zjj.coursestudy.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -36,6 +37,20 @@ public class CourseServiceImpl implements CourseService {
         return null;
     }
 
+    public Set<Course> getStudentCourses(String name, boolean end){
+        User user = userDao.findByName(name);
+        Set<Course> courses = new HashSet<>();
+        if(user.getRole().equals("student")){
+            for (Course c: user.getCourses()){
+                if(c.isEnding() == end){
+                    courses.add(c);
+                }
+            }
+            return courses;
+        }
+        return null;
+    }
+
     public Set<Course> getTeacherAllCourses(String name){
         User user = userDao.findByName(name);
         if(user.getRole().equals("teacher")){
@@ -50,5 +65,9 @@ public class CourseServiceImpl implements CourseService {
 
     public Course saveCourse(Course course){
         return courseDao.save(course);
+    }
+
+    public Set<Course> getCoursesByTeacherAndEnding(User teacher, boolean end){
+        return courseDao.getCoursesByTeacherAndEnding(teacher, end);
     }
 }

@@ -20,7 +20,7 @@ public class KeyWordServiceImpl implements KeyWordService {
     private ExerciseDao exerciseDao;
 
     public KeyWord getKeyWordByID(int ID){
-        return keyWordDao.getOne(ID);
+        return keyWordDao.findKeyWordByID(ID);
     }
 
     public KeyWord saveKeyWord(KeyWord keyWord){

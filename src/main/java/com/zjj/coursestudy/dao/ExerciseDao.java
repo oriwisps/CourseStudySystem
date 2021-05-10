@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface ExerciseDao extends JpaRepository<Exercise, Integer> {
 
-    @Query(value = "select * from exercise e where e.content like %?1% limit ?2", nativeQuery = true)
+    @Query(value = "select * from exercise e where (e.is_updated = false and (e.content like %?1% or e.answer like %?1%)) limit ?2", nativeQuery = true)
     List<Exercise> autoGetExercises(String keyWord, int number);
 }

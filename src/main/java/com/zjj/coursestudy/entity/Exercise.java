@@ -26,6 +26,9 @@ public class Exercise {
     @Column(name = "is_updated")
     private boolean isUpdated;
 
+    @Column(name = "father")
+    private int father;
+
     @ManyToMany(mappedBy = "exercises", cascade = CascadeType.REFRESH)
     @JsonIgnoreProperties("exercises")
     private Set<KeyWord> keyWords;
@@ -76,5 +79,13 @@ public class Exercise {
 
     public void setKeyWords(Set<KeyWord> keyWords) {
         this.keyWords = keyWords;
+    }
+
+    public int getFather() {
+        return father;
+    }
+
+    public void setFather(int father) {
+        this.father = father;
     }
 }

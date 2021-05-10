@@ -12,9 +12,9 @@ import java.util.Date;
 public class JwtUtil {
 
     /**
-     * 过期时间1天
+     * 过期时间7天
      */
-    private static final long EXPIRE_TIME = 5 * 60 * 1000 * 12 * 24;
+    private static final long EXPIRE_TIME = 5 * 60 * 1000 * 12 * 24 * 7;
     /**
      * jwt 密钥
      */

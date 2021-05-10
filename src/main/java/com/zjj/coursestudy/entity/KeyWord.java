@@ -84,4 +84,9 @@ public class KeyWord {
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
     }
+
+    @Override
+    public String toString(){
+        return "";
+    }
 }

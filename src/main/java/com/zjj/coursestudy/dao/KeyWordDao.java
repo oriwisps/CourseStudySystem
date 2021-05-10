@@ -12,4 +12,5 @@ import java.util.Set;
 @Repository
 public interface KeyWordDao extends JpaRepository<KeyWord, Integer> {
 
+    KeyWord findKeyWordByID(int id);
 }

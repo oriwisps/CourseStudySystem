@@ -5,17 +5,21 @@ import com.zjj.coursestudy.entity.Score;
 public class ScoreVo {
 
     private int scoreID;
+    private int itemID;
     private String itemName;
     private String courseName;
     private double proportion;
+    private String description;
     private double score;
 
     public ScoreVo(Score score){
+        this.itemID = score.getEvaluationItem().getID();
         this.scoreID = score.getID();
         this.itemName = score.getEvaluationItem().getName();
         this.courseName = score.getEvaluationItem().getCourse().getName();
         this.proportion = score.getEvaluationItem().getProportion();
         this.score = score.getScore();
+        this.description = score.getEvaluationItem().getDescription();
     }
 
     public int getScoreID() {
@@ -56,5 +60,21 @@ public class ScoreVo {
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getItemID() {
+        return itemID;
+    }
+
+    public void setItemID(int itemID) {
+        this.itemID = itemID;
     }
 }

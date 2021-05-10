@@ -1,6 +1,7 @@
 package com.zjj.coursestudy.service.Impl;
 
 import com.zjj.coursestudy.dao.ScoreDao;
+import com.zjj.coursestudy.entity.EvaluationItem;
 import com.zjj.coursestudy.entity.Score;
 import com.zjj.coursestudy.entity.User;
 import com.zjj.coursestudy.service.ScoreService;
@@ -25,6 +26,10 @@ public class ScoreServiceImpl implements ScoreService {
 
     public List<Score> getScoresByStudentAndCourse(User student, int courseID){
         return scoreDao.getScoresByCourseAndStudent(student.getID(), courseID);
+    }
+
+    public List<Score> getScoresByEvaluationItem(EvaluationItem e){
+        return scoreDao.getScoresByEvaluationItem(e);
     }
 
 }

@@ -26,4 +26,8 @@ public class DiscussionServiceImpl implements DiscussionService {
     public Discussion saveDiscussion(Discussion discussion){
         return discussionDao.save(discussion);
     }
+
+    public  Discussion getDiscussionByID(int id){
+        return discussionDao.getOne(id);
+    }
 }

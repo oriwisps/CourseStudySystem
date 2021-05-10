@@ -10,6 +10,7 @@ public class CourseVo {
     private String teacherName;
     private String teacherContact;
     private boolean end;
+    private String state;
 
     public CourseVo(Course course){
         courseID = course.getID();
@@ -18,6 +19,12 @@ public class CourseVo {
         teacherName = course.getTeacherName();
         teacherContact = course.getTeacherContact();
         end = course.isEnding();
+        if(end){
+            state = "已结束";
+        }
+        else {
+            state = "未结束";
+        }
     }
 
     public int getCourseID() {
@@ -66,5 +73,13 @@ public class CourseVo {
 
     public void setEnd(boolean end) {
         this.end = end;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
     }
 }

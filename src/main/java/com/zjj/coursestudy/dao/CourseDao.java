@@ -16,4 +16,7 @@ public interface CourseDao extends JpaRepository<Course, Integer> {
     Course getCourseByID(int ID);
 
     Set<Course> getCoursesByTeacher(User teacher);
+
+    @Query(value = "select c from Course c where c.teacher = ?1 and c.isEnding = ?2")
+    Set<Course> getCoursesByTeacherAndEnding(User teacher, boolean ending);
 }

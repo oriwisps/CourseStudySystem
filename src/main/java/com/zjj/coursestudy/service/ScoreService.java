@@ -1,5 +1,6 @@
 package com.zjj.coursestudy.service;
 
+import com.zjj.coursestudy.entity.EvaluationItem;
 import com.zjj.coursestudy.entity.Score;
 import com.zjj.coursestudy.entity.User;
 
@@ -12,4 +13,6 @@ public interface ScoreService {
     List<Score> getScoresByStudent(User student);
 
     List<Score> getScoresByStudentAndCourse(User student, int courseID);
+
+    List<Score> getScoresByEvaluationItem(EvaluationItem e);
 }

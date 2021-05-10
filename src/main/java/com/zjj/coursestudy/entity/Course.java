@@ -40,7 +40,6 @@ public class Course {
     private List<EvaluationItem> evaluationItems;
 
     @ManyToMany(cascade = CascadeType.REFRESH)
-    @JsonIgnoreProperties("courses")
     @JoinTable(name = "student_course_link"
             , joinColumns = @JoinColumn(name = "course_id")
             , inverseJoinColumns = @JoinColumn(name = "student_id"))
@@ -139,5 +138,10 @@ public class Course {
 
     public void setKeyWords(Set<KeyWord> keyWords) {
         this.keyWords = keyWords;
+    }
+
+    @Override
+    public String toString(){
+        return "";
     }
 }

@@ -11,6 +11,7 @@ public class DiscussionVo {
     private Date time;
     private String senderName;
     private String receiverName;
+    private String replyTo;
 
     public DiscussionVo(Discussion discussion){
         discussionID = discussion.getID();
@@ -18,6 +19,9 @@ public class DiscussionVo {
         time = discussion.getTime();
         senderName = discussion.getSender().getName();
         receiverName = discussion.getReceiver().getName();
+        if(discussion.getReplyTo() != null){
+            replyTo = discussion.getReplyTo().getContent();
+        }
     }
 
     public int getDiscussionID() {
@@ -58,5 +62,13 @@ public class DiscussionVo {
 
     public void setReceiverName(String receiverName) {
         this.receiverName = receiverName;
+    }
+
+    public String getReplyTo() {
+        return replyTo;
+    }
+
+    public void setReplyTo(String replyTo) {
+        this.replyTo = replyTo;
     }
 }

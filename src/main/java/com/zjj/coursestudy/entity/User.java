@@ -1,5 +1,6 @@
 package com.zjj.coursestudy.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -30,10 +31,12 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "students", cascade = CascadeType.REFRESH)
     @JsonIgnoreProperties("students")
     private Set<Course> courses;
 
+    @JsonIgnore
     @JsonManagedReference
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "teacher", fetch = FetchType.EAGER)
     private Set<KeyWord> keyWords;
@@ -100,5 +103,10 @@ public class User {
 
     public void setKeyWords(Set<KeyWord> keyWords) {
         this.keyWords = keyWords;
+    }
+
+    @Override
+    public String toString(){
+        return "";
     }
 }

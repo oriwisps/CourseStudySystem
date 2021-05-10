@@ -126,6 +126,20 @@ public class UserController {
         return respBean;
     }
 
+    @PostMapping("/info")
+    public RespBean queryUserInfoByID(@RequestParam(value = "studentID") String studentID){
+        RespBean respBean;
+        User user = userService.getUserByID(studentID);
+        if(user != null){
+            UserInfoVo userInfoVo = new UserInfoVo(user);
+            respBean = RespBean.ok("查询成功", userInfoVo);
+        }
+        else {
+            respBean = RespBean.requestError("查询失败");
+        }
+        return respBean;
+    }
+
     /**
      * 修改用户电话或邮箱
      * @param phone 电话（可为空，此时不修改）
