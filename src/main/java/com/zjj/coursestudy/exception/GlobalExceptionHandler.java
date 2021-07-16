@@ -1,6 +1,6 @@
 package com.zjj.coursestudy.exception;
 
-import com.zjj.coursestudy.model.RespBean;
+import com.zjj.coursestudy.vo.RespBean;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

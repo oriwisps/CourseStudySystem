@@ -1,7 +1,7 @@
 package com.zjj.coursestudy.controller;
 
 import com.zjj.coursestudy.entity.*;
-import com.zjj.coursestudy.model.RespBean;
+import com.zjj.coursestudy.vo.RespBean;
 import com.zjj.coursestudy.service.*;
 import com.zjj.coursestudy.utils.CourseCodeUtil;
 import com.zjj.coursestudy.utils.JwtUtil;

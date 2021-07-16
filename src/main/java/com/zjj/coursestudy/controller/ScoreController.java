@@ -4,7 +4,7 @@ import com.zjj.coursestudy.entity.Course;
 import com.zjj.coursestudy.entity.EvaluationItem;
 import com.zjj.coursestudy.entity.Score;
 import com.zjj.coursestudy.entity.User;
-import com.zjj.coursestudy.model.RespBean;
+import com.zjj.coursestudy.vo.RespBean;
 import com.zjj.coursestudy.service.CourseService;
 import com.zjj.coursestudy.service.EvaluationItemService;
 import com.zjj.coursestudy.service.ScoreService;

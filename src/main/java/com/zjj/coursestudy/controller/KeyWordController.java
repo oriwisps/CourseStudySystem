@@ -1,13 +1,12 @@
 package com.zjj.coursestudy.controller;
 
 import com.zjj.coursestudy.entity.*;
-import com.zjj.coursestudy.model.RespBean;
+import com.zjj.coursestudy.vo.RespBean;
 import com.zjj.coursestudy.service.*;
 import com.zjj.coursestudy.utils.JwtUtil;
 import com.zjj.coursestudy.vo.ExerciseVo;
 import com.zjj.coursestudy.vo.KeyWordVo;
 import com.zjj.coursestudy.vo.StudentVo;
-import com.zjj.coursestudy.vo.UserInfoVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

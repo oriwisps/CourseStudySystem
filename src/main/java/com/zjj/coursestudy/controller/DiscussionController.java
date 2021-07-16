@@ -3,7 +3,7 @@ package com.zjj.coursestudy.controller;
 import com.zjj.coursestudy.entity.Discussion;
 import com.zjj.coursestudy.entity.KeyWord;
 import com.zjj.coursestudy.entity.User;
-import com.zjj.coursestudy.model.RespBean;
+import com.zjj.coursestudy.vo.RespBean;
 import com.zjj.coursestudy.service.DiscussionService;
 import com.zjj.coursestudy.service.KeyWordService;
 import com.zjj.coursestudy.service.UserService;

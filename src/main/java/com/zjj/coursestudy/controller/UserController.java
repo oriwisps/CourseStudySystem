@@ -1,8 +1,8 @@
 package com.zjj.coursestudy.controller;
 
 import com.zjj.coursestudy.entity.User;
-import com.zjj.coursestudy.model.JwtToken;
-import com.zjj.coursestudy.model.RespBean;
+import com.zjj.coursestudy.vo.JwtToken;
+import com.zjj.coursestudy.vo.RespBean;
 import com.zjj.coursestudy.service.UserService;
 import com.zjj.coursestudy.utils.JwtUtil;
 import com.zjj.coursestudy.vo.UserInfoVo;
@@ -126,6 +126,11 @@ public class UserController {
         return respBean;
     }
 
+    /**
+     * 通过学生ID获取学生信息
+     * @param studentID
+     * @return
+     */
     @PostMapping("/info")
     public RespBean queryUserInfoByID(@RequestParam(value = "studentID") String studentID){
         RespBean respBean;

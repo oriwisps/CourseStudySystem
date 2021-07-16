@@ -1,6 +1,6 @@
 package com.zjj.coursestudy.filter;
 
-import com.zjj.coursestudy.model.JwtToken;
+import com.zjj.coursestudy.vo.JwtToken;
 import com.zjj.coursestudy.utils.JwtUtil;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;

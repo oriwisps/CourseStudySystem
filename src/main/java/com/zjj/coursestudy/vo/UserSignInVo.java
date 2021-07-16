@@ -14,8 +14,12 @@ public class UserSignInVo {
     public User createUser(){
         User user = new User();
         user.setName(name);
-        user.setPhone(phone);
-        user.setEmail(email);
+        if(phone != null){
+            user.setPhone(phone);
+        }
+        if(email != null){
+            user.setEmail(email);
+        }
         user.setPassword(password);
         user.setRole(role);
         user.setID(UUIDUtil.createUUID());

@@ -4,13 +4,12 @@ import com.zjj.coursestudy.entity.Answer;
 import com.zjj.coursestudy.entity.Exercise;
 import com.zjj.coursestudy.entity.KeyWord;
 import com.zjj.coursestudy.entity.User;
-import com.zjj.coursestudy.model.RespBean;
+import com.zjj.coursestudy.vo.RespBean;
 import com.zjj.coursestudy.service.AnswerService;
 import com.zjj.coursestudy.service.ExerciseService;
 import com.zjj.coursestudy.service.KeyWordService;
 import com.zjj.coursestudy.service.UserService;
 import com.zjj.coursestudy.utils.JwtUtil;
-import com.zjj.coursestudy.vo.AnswerVo;
 import com.zjj.coursestudy.vo.StuExerciseVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -109,6 +108,7 @@ public class AnswerController {
                     exerciseVoList.add(new StuExerciseVo(e, keyWord));
                 }
             }
+            exerciseVoList.sort(Comparator.comparing(StuExerciseVo::getExerciseID));
             respBean = RespBean.ok("查询成功", exerciseVoList);
         }
         return respBean;

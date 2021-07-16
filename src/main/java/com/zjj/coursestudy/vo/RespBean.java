@@ -1,4 +1,4 @@
-package com.zjj.coursestudy.model;
+package com.zjj.coursestudy.vo;
 
 public class RespBean {
 

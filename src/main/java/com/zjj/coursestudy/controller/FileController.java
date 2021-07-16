@@ -4,8 +4,9 @@ import com.zjj.coursestudy.entity.Course;
 import com.zjj.coursestudy.entity.Exercise;
 import com.zjj.coursestudy.entity.KeyWord;
 import com.zjj.coursestudy.entity.User;
-import com.zjj.coursestudy.model.JwtToken;
-import com.zjj.coursestudy.model.RespBean;
+import com.zjj.coursestudy.utils.UUIDUtil;
+import com.zjj.coursestudy.vo.JwtToken;
+import com.zjj.coursestudy.vo.RespBean;
 import com.zjj.coursestudy.service.CourseService;
 import com.zjj.coursestudy.service.ExerciseService;
 import com.zjj.coursestudy.service.KeyWordService;
@@ -13,7 +14,6 @@ import com.zjj.coursestudy.service.UserService;
 import org.apache.poi.POIXMLDocument;
 import org.apache.poi.hwpf.extractor.WordExtractor;
 import org.apache.poi.openxml4j.opc.OPCPackage;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -89,6 +89,19 @@ public class FileController {
             student = userService.getUserByName(username);
             if(student != null){
                 course.getStudents().add(student);
+            }
+            else {
+                User newStudent = new User();
+                newStudent.setName(username);
+                newStudent.setPassword("123456");
+                newStudent.setID(UUIDUtil.createUUID());
+                newStudent.setRole("student");
+                newStudent.setPhone(username);
+                newStudent.setEmail(username + "@163.com");
+                newStudent = userService.saveUser(newStudent);
+                if(newStudent != null){
+                    course.getStudents().add(newStudent);
+                }
             }
         }
         course = courseService.saveCourse(course);
